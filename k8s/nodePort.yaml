@@ -1,0 +1,13 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+# need to use minikube service to connect
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-app
+spec:
+  selector:
+    component: web
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 3000

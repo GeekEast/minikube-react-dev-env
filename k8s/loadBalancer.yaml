@@ -1,0 +1,14 @@
+
+# need to use minikube tunnel to connect
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-app-lb
+spec:
+  type: LoadBalancer
+  selector:
+    component: web
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
